@@ -1,6 +1,36 @@
 #!/bin/bash
 #Script para instalar os programas do dia a dia
 
+echo -e "Setando Trim para SSD\n"
+
+sudo systemctl enable fstrim.timer
+
+sleep 2
+
+clear
+
+echo -e "Instalando RMLint - Programa que limpa arquivos duplicados\n"
+
+sudo pacman -S rmlint
+
+sleep 2
+
+clear
+
+echo -e "Listando arquivos duplicados em /home\n"
+
+sudo rmlint /home/
+
+sleep 2
+
+echo -e "Foi criado um arquivo rmlint.sh com todos os arquivos duplicados.\n"
+
+echo -e "\n Para excluí los basta executar 'sudo sh rmlint.sh'."
+
+sleep 2
+
+clear 
+
 echo "Limpando terminal"
 
 sleep 3
